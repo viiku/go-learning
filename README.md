@@ -29,11 +29,13 @@ In Go, unsigned integer types include:
 
 #### [] byte
 Strings can be converted to byte slices and back again:
+
     s := "abc"
     b := []byte(s)
     s2 := string(b)
-Conceptually, the []byte(s) conversion allocates a new byte array holding a copy of the bytes
-of s, and yields a slice that references the entirety of that array.
-An optimizing compiler may be able to avoid the allocation and copying in some cases, but in general copying is required to ensure that the bytes of s remain unchanged even if those of b are subsequently modified. 
-The conversion from byte slice back to string with string(b) also makes a copy, to ensure
-immutability of the resulting string s2.
+
+Conceptually, the []byte(s) conversion allocates a new byte array holding a copy of the bytes of s, and yields a slice that references the entirety of that array.
+
+An optimizing compiler may be able to avoid the allocation and copying in some cases, but in general copying is required to ensure that the bytes of s remain unchanged even if those of b are subsequently modified.
+
+The conversion from byte slice back to string with string(b) also makes a copy, to ensure immutability of the resulting string s2.
