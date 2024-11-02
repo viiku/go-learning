@@ -9,8 +9,11 @@ A series of go programming.
 ####
 1. Signed Integers
 Signed integers can represent both positive and negative numbers.
+
 They use one bit (the most significant bit) to indicate the sign: 0 for positive and 1 for negative.
+
     In Go, signed integer types include:
+    
     int8: Range from -128 to 127
     int16: Range from -32,768 to 32,767
     int32: Range from -2,147,483,648 to 2,147,483,647
@@ -19,6 +22,7 @@ They use one bit (the most significant bit) to indicate the sign: 0 for positive
 
 2. Unsigned Integers
 Unsigned integers can represent only non-negative values (0 and positive numbers).
+
 All bits are used to store the number, allowing a larger positive range compared to signed integers of the same bit width.
 In Go, unsigned integer types include:
     uint8 (or byte): Range from 0 to 255
