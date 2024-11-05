@@ -2,17 +2,17 @@ package html
 
 import "io"
 
+type NodeType int32
+
+type Attribute struct {
+	Key, Val string
+}
+
 type Node struct {
 	Type                    NodeType
 	Data                    string
 	Attr                    []Attribute
 	FirstChild, NextSibling *Node
-}
-
-type NodeType int32
-
-type Attribute struct {
-	Key, Val string
 }
 
 const (
