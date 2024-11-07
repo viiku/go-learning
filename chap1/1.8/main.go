@@ -5,6 +5,7 @@ package main
 
 import (
 	"fmt"
+	"io"
 	"net/http"
 	"os"
 )
@@ -24,11 +25,11 @@ func main() {
 			os.Exit(1)
 		}
 		fmt.Printf("%s", resp.Body)
-		// b, err := io.ReadAll(resp.Body)
-		// resp.Body.Close()
-		// if err != nil {
-		// 	fmt.Fprintf(os.Stderr, "fetch: reading %s: %v\n", url, err)
-		// }
-		// fmt.Printf("%s", b)
+		b, err := io.ReadAll(resp.Body)
+		resp.Body.Close()
+		if err != nil {
+			fmt.Fprintf(os.Stderr, "fetch: reading %s: %v\n", url, err)
+		}
+		fmt.Printf("%s", b)
 	}
 }
