@@ -4,6 +4,10 @@ import (
 	"fmt"
 )
 
+func isURLValid(url string) bool {
+	if url.
+}
+
 // visit appends to links each link found in n and returns the result.
 func visit(links []string, n *Node) []string {
 	if n.Type == ElementNode && n.Data == "a" {
@@ -24,7 +28,7 @@ func linkFinder(url string) {
 	if err != nil {
 		fmt.Print("Not able to fetch URL Data.")
 	}
-	doc, err := Parse(urlData)
+	doc, err := html.Parse(urlData)
 	if err != nil {
 		fmt.Print("Not able to Parse URL Data.")
 	}

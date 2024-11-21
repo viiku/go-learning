@@ -1,4 +1,6 @@
-package main
+package html
+
+import "io"
 
 type NodeType int32
 
@@ -22,6 +24,4 @@ const (
 	DoctypeNode
 )
 
-func Parse(data string) (*Node, error)
-
-// func Parse(r io.Reader) (*Node, error)
+func Parse(r io.Reader) (*Node, error)
